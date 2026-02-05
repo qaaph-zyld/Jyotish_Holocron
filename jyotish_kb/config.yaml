@@ -1,0 +1,33 @@
+# Jyotish Knowledge Base Configuration
+
+# Ollama settings
+ollama_base_url: "http://127.0.0.1:11434"
+
+# Models
+llm_model: "llama3.1:8b"
+embed_model: "nomic-embed-text"
+
+# Data paths
+data_path: "./data"
+chroma_dir: "./chroma_db"
+collection_name: "jyotish_kb"
+
+# Chunking settings
+chunk_size_tokens: 256
+chunk_overlap_tokens: 32
+
+# Retrieval settings
+top_k: 3
+
+# Memory control settings (for 16GB RAM optimization)
+llm_context_window: 2048
+llm_request_timeout: 180
+rag_max_chars: 6000
+
+# Answer style: "concise" | "detailed"
+answer_style: "detailed"
+
+# Grounding threshold (maximum distance for reliable retrieval)
+# ChromaDB uses L2 distance: 0.0 = perfect match, higher = worse
+# If best chunk distance is above this, system will warn about weak retrieval
+reliability_threshold: 1.5
